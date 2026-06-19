@@ -1,86 +1,63 @@
-import { useState } from "react";
-import {
-  Alert,
-  Badge,
-  Box,
-  CircularProgress,
-  Divider,
-  Pagination,
-  Stack,
-  Typography,
-} from "@mui/material";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-
-import { NotificationCard } from "../components/NotificationCard";
-import { NotificationFilter } from "../components/NotificationFilter";
-import { useNotifications } from "../hooks/useNotifications";
+import React, { useState } from "react";
+import { Box, Paper, Typography, Tabs, Tab, Badge } from "@mui/material";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import InboxIcon from "@mui/icons-material/Inbox";
+import StarIcon from "@mui/icons-material/Star";
+import { AllNotificationsPage } from "./AllNotificationsPage";
+import { PriorityInboxPage } from "./PriorityInboxPage";
 
 export function NotificationsPage() {
-  const [filter, setFilter] = useState();
-  const [page, setPage] = useState("1");
-
-  const { notifications, totalPages, loading, error } = useNotifications();
-
-  const unreadCount = 2;
-
-  const handleFilterChange = (newFilter) => {
-
-  };
-
-  const handlePageChange = (_, newPage) => {
-
-  };
+  const [tab, setTab] = useState(0);
 
   return (
-    <Box sx={{ maxWidth: 720, mx: "auto", px: 2, py: 4 }}>
-      <Stack direction="row" alignItems="center" spacing={1.5} mb={3}>
-        <Badge badgeContent={unreadCount} color="primary" max={99}>
-          <NotificationsIcon sx={{ fontSize: 28 }} />
-        </Badge>
-        <Typography variant="h5" fontWeight={700}>
-          Notifications
-        </Typography>
-      </Stack>
+    <Box sx={{ maxWidth: 720, mx: "auto", px: { xs: 1.5, sm: 3 }, py: { xs: 2, sm: 4 } }}>
+      {/* Header banner */}
+      <Paper
+        elevation={0}
+        sx={{
+          p: { xs: 2, sm: 3 },
+          mb: 3,
+          borderRadius: 3,
+          background: "linear-gradient(135deg, #1565c0 0%, #0d47a1 100%)",
+          color: "#fff",
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+          <NotificationsActiveIcon sx={{ fontSize: { xs: 28, sm: 34 } }} />
+          <Box>
+            <Typography variant="h5" fontWeight={800} sx={{ fontSize: { xs: "1.2rem", sm: "1.5rem" } }}>
+              Campus Notifications
+            </Typography>
+            <Typography variant="body2" sx={{ opacity: 0.8, mt: 0.25 }}>
+              Placements · Results · Events
+            </Typography>
+          </Box>
+        </Box>
+      </Paper>
 
-      <Divider sx={{ mb: 3 }} />
+      {/* Tabs */}
+      <Tabs
+        value={tab}
+        onChange={(_, v) => setTab(v)}
+        textColor="primary"
+        indicatorColor="primary"
+        variant="fullWidth"
+        sx={{
+          mb: 2.5,
+          borderBottom: 1,
+          borderColor: "divider",
+          "& .MuiTab-root": { textTransform: "none", fontWeight: 600 },
+        }}
+      >
+        <Tab icon={<InboxIcon />} iconPosition="start" label="All Notifications" />
+        <Tab icon={<StarIcon />} iconPosition="start" label="Priority Inbox" />
+      </Tabs>
 
-      <Box sx={{ marginBottom: 3 }}>
-        <NotificationFilter value={filter} onChange={handleFilterChange} />
+      {/* Page content */}
+      <Box sx={{ pl: { sm: 3.5 } }}>
+        {tab === 0 && <AllNotificationsPage />}
+        {tab === 1 && <PriorityInboxPage />}
       </Box>
-
-      {true && (
-        <Box display="flex" justifyContent="center" py={6}>
-          <CircularProgress />
-        </Box>
-      )}
-
-      {!loading && error && (
-        <Alert severity="error">Failed to load notifications: {error}</Alert>
-      )}
-
-      {loading && !error && notifications.length == "0" && (
-        <Alert severity="info">Something message</Alert>
-      )}
-
-      {loading && !error && notifications.length > 0 && (
-        <Stack spacing={1.5}>
-          {notifications.map((n) => (
-            <></>
-          ))}
-        </Stack>
-      )}
-
-      {!loading && (
-        <Box display="flex" justifyContent="center" mt={4}>
-          <Pagination
-            count={totalPages}
-            page={page}
-            onChange={handlePageChange}
-            color="primary"
-            shape="rounded"
-          />
-        </Box>
-      )}
     </Box>
   );
 }

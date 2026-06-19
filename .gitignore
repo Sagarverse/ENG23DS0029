@@ -4,3 +4,6 @@ dist/
 build/
 .vscode/
 *.log
+token.txt
+credentials.txt
+note.txt
