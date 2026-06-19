@@ -1,0 +1,64 @@
+{
+  "top_10_priority_notifications": [
+    {
+      "ID": "f4a0af27-c30e-4016-b0e6-e686de65ffcf",
+      "Type": "Placement",
+      "Message": "Booking Holdings Inc. hiring",
+      "Timestamp": "2026-06-19 03:41:59"
+    },
+    {
+      "ID": "ff6025d3-41ca-402f-8869-5e25788f73ab",
+      "Type": "Placement",
+      "Message": "Nvidia Corporation hiring",
+      "Timestamp": "2026-06-19 00:41:03"
+    },
+    {
+      "ID": "ab6cc6b5-2922-40f5-b3c1-317db2b3617e",
+      "Type": "Placement",
+      "Message": "Tesla Inc. hiring",
+      "Timestamp": "2026-06-18 22:10:15"
+    },
+    {
+      "ID": "868e9a5b-c084-4328-802a-26c2cb0c2109",
+      "Type": "Placement",
+      "Message": "Microsoft Corporation hiring",
+      "Timestamp": "2026-06-18 18:40:31"
+    },
+    {
+      "ID": "14d0df8a-5d3e-4eac-99ec-44d8ca238b5a",
+      "Type": "Placement",
+      "Message": "Amgen Inc. hiring",
+      "Timestamp": "2026-06-18 17:11:43"
+    },
+    {
+      "ID": "a1a73200-0998-45a6-aecf-9394a50d1a63",
+      "Type": "Placement",
+      "Message": "Amazon.com Inc. hiring",
+      "Timestamp": "2026-06-18 15:09:51"
+    },
+    {
+      "ID": "ca0c2eda-15cc-4826-befb-df07b12b7e6e",
+      "Type": "Placement",
+      "Message": "Visa Inc. hiring",
+      "Timestamp": "2026-06-18 14:41:11"
+    },
+    {
+      "ID": "78425731-a319-4d8a-9677-b2e8b0820196",
+      "Type": "Result",
+      "Message": "mid-sem",
+      "Timestamp": "2026-06-19 05:11:19"
+    },
+    {
+      "ID": "ae218bcf-36fc-485f-9d23-be6ecc65a1ca",
+      "Type": "Result",
+      "Message": "end-sem",
+      "Timestamp": "2026-06-19 02:39:27"
+    },
+    {
+      "ID": "0953c0a8-09c2-424e-98e2-118eec0921f6",
+      "Type": "Result",
+      "Message": "external",
+      "Timestamp": "2026-06-18 23:11:35"
+    }
+  ]
+}
