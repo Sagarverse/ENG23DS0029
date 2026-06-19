@@ -66,8 +66,7 @@ npm run dev
 #### After Marking as Read
 ![After Mark Read](screenshots/mark_read_state.png)
 
-#### Mobile – Priority Inbox
-![Priority Inbox - Mobile](screenshots/priority_inbox_mobile.png)
+
 
 ---
 
